@@ -1,6 +1,7 @@
 package com.apitesting.utils;
 
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -14,6 +15,11 @@ public final class ApiUtils {
         return given().baseUri("https://reqres.in")
                 .log()
                 .all();
+    }
+
+    public static RequestSpecification buildRequestForPostCalls(){
+        return buildRequestForGetCalls()
+                .contentType(ContentType.JSON);
     }
 
 
