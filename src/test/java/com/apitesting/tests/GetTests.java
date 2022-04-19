@@ -1,10 +1,9 @@
 package com.apitesting.tests;
 
-import com.apitesting.utils.ApiUtils;
+import com.apitesting.requestbuilder.RequestBuilder;
 import io.restassured.response.Response;
-import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
-import static io.restassured.RestAssured.*;
+import org.assertj.core.api.Assertions;
 import static org.assertj.core.api.Assertions.*;
 
 public class GetTests {
@@ -14,7 +13,7 @@ public class GetTests {
 
     @Test
     public void getUsersDetails(){
-        Response response = ApiUtils.buildRequestForGetCalls()
+        Response response = RequestBuilder.buildRequestForGetCalls()
                 .get("/api/users?page=2");
 
         response.prettyPrint();
@@ -30,7 +29,7 @@ public class GetTests {
 
     @Test
     public void getUserDetails(){
-        Response response = ApiUtils.buildRequestForGetCalls()
+        Response response = RequestBuilder.buildRequestForGetCalls()
                 .pathParams("id", 2)
                 .get("/api/users/{id}");
 

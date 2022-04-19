@@ -1,4 +1,4 @@
-package com.apitesting.utils;
+package com.apitesting.requestbuilder;
 
 
 import io.restassured.http.ContentType;
@@ -7,9 +7,9 @@ import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.*;
 
-public final class ApiUtils {
+public final class RequestBuilder {
     //to avoid external instantiation
-    private ApiUtils(){}
+    private RequestBuilder(){}
 
     public static RequestSpecification buildRequestForGetCalls(){
         return given().baseUri("https://reqres.in")
