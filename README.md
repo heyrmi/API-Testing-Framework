@@ -1,4 +1,4 @@
-# Striver-SDE-Sheet-Java
+# API-Testing-Framework
 
 This is an Rest-API testing framework which is made from 
 - RestAssured
