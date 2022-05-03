@@ -6,6 +6,9 @@ import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.*;
 
+import com.apitesting.enums.ConfigProperties;
+import com.apitesting.utils.PropertyUtils;
+
 public final class RequestBuilder {
     // to avoid external instantiation
     private RequestBuilder() {
@@ -17,7 +20,7 @@ public final class RequestBuilder {
      * @return Request Specification
      */
     public static RequestSpecification buildRequestForGetCalls() {
-        return given().baseUri("https://reqres.in")
+        return given().baseUri(PropertyUtils.getValue(ConfigProperties.BASEURL))
                 .log()
                 .all();
     }

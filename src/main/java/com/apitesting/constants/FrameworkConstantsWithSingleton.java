@@ -28,4 +28,7 @@ public class FrameworkConstantsWithSingleton {
             + "/src/test/resources/JSON/";
     private final String JSONResponseFolderPath = System.getProperty("user.dir") + "/output/";
 
+    private static @Getter final String configPropertiesFilePath = System.getProperty("user.dir")
+            + "/src/test/resources/config.properties";
+
 }

@@ -14,4 +14,7 @@ public final class FrameworkConstants {
             + "/src/test/resources/JSON/";
     private static @Getter final String JSONResponseFolderPath = System.getProperty("user.dir") + "/output/";
 
+    private static @Getter final String configPropertiesFilePath = System.getProperty("user.dir")
+            + "/src/test/resources/config.properties";
+
 }
