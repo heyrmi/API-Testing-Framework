@@ -3,6 +3,7 @@ package com.apitesting.utils;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import io.restassured.response.Response;
 import lombok.SneakyThrows;
 
 //do not want others to extend this class
@@ -23,5 +24,16 @@ public final class APIUtils {
     public static String readJSONAndReturnString(String filePath) {
 
         return new String(Files.readAllBytes(Paths.get(filePath)));
+    }
+
+    /**
+     * This function takes the oputput of a request and puts it into a file
+     * 
+     * @param filePath
+     * @return
+     */
+    @SneakyThrows
+    public static void storeStringAsJSONFile(String filePath, Response response) {
+        Files.write(Paths.get(filePath), response.asByteArray());
     }
 }
