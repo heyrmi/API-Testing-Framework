@@ -1,6 +1,7 @@
 package com.apitesting.reports;
 
 import com.aventstack.extentreports.ExtentTest;
+import java.util.Objects;
 
 public final class ExtentManager {
 
@@ -9,9 +10,10 @@ public final class ExtentManager {
     }
 
     // ThreadLocal variable to safeguard the ExtentTest variable
-    // It gives acces to the thread that stated the execution,
+    // It gives access to the thread that stated the execution,
     // thus ensures thread safety
 
+    /*
     private static ThreadLocal<ExtentTest> threadLocalTest = new ThreadLocal<>();
 
     // Getter for test
@@ -23,4 +25,26 @@ public final class ExtentManager {
     static void setTest(ExtentTest test) {
         threadLocalTest.set(test);
     }
+    */
+
+    private static ThreadLocal<ExtentTest> extTest = new ThreadLocal<>() ;
+
+
+    static ExtentTest getTest() {
+        return extTest.get();
+    }
+
+
+    static void setTest(ExtentTest test) {
+        if(Objects.nonNull(test)) {
+            extTest.set(test);
+        }
+    }
+
+
+    static void unload() {
+        extTest.remove();
+    }
+
+
 }

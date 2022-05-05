@@ -2,12 +2,10 @@ package com.apitesting.tests;
 
 import com.apitesting.pojo.User;
 import com.apitesting.reports.ExtentLogger;
-import com.apitesting.reports.ExtentReport;
+
 import com.apitesting.requestbuilder.RequestBuilder;
 import com.apitesting.utils.APIUtils;
 import com.apitesting.utils.RandomUtils;
-import com.aventstack.extentreports.markuputils.CodeLanguage;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 import static com.apitesting.utils.RandomUtils.*;
 
@@ -102,7 +100,7 @@ public class PostTests {
                                 response);
 
                 // to log the response in the extent reports
-                ExtentLogger.logResponse(response.asPrettyString());
+                // ExtentLogger.logResponse(response.asPrettyString());
 
                 Assertions.assertThat(response.getStatusCode()).isEqualTo(201);
         }
