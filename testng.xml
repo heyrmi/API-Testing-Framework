@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test parallel="methods" thread-count="5" name="/Users/rahulmishra/Documents/Code/Professional/API-Testing-Framework">
+        <classes>
+            <class name="com.apitesting.tests.GetTests">
+                <methods>
+                    <include name="getUsersDetails" />
+                    <include name="getUserDetails" />
+                </methods>
+            </class>
+            <class name="com.apitesting.tests.PostTests">
+                <methods>
+                    <include name="postUsers" />
+                    <include name="postUser" />
+                    <include name="postRequestUsingExternalFile" />
+                    <include name="postRequestUsingExternalFileUsingSingleton" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
