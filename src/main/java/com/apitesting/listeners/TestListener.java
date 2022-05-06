@@ -1,5 +1,6 @@
 package com.apitesting.listeners;
 
+import com.apitesting.annotation.FrameworkAnnotation;
 import com.apitesting.reports.ExtentLogger;
 import com.apitesting.reports.ExtentReport;
 
@@ -23,6 +24,12 @@ public class TestListener implements ITestListener, ISuiteListener {
     @Override
     public void onTestStart(ITestResult result) {
         ExtentReport.createTest(result.getName());
+        ExtentReport.addAuthors(
+                result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class)
+                        .author());
+        ExtentReport.addCategories(
+                result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class)
+                        .category());
     }
 
     @Override

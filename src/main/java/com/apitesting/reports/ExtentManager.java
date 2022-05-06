@@ -14,37 +14,33 @@ public final class ExtentManager {
     // thus ensures thread safety
 
     /*
-    private static ThreadLocal<ExtentTest> threadLocalTest = new ThreadLocal<>();
+     * private static ThreadLocal<ExtentTest> threadLocalTest = new ThreadLocal<>();
+     * 
+     * // Getter for test
+     * static ExtentTest getTest() {
+     * return threadLocalTest.get();
+     * }
+     * 
+     * // Setter for test
+     * static void setTest(ExtentTest test) {
+     * threadLocalTest.set(test);
+     * }
+     */
 
-    // Getter for test
-    static ExtentTest getTest() {
-        return threadLocalTest.get();
-    }
-
-    // Setter for test
-    static void setTest(ExtentTest test) {
-        threadLocalTest.set(test);
-    }
-    */
-
-    private static ThreadLocal<ExtentTest> extTest = new ThreadLocal<>() ;
-
+    private static ThreadLocal<ExtentTest> extTest = new ThreadLocal<>();
 
     static ExtentTest getTest() {
         return extTest.get();
     }
 
-
     static void setTest(ExtentTest test) {
-        if(Objects.nonNull(test)) {
+        if (Objects.nonNull(test)) {
             extTest.set(test);
         }
     }
 
-
     static void unload() {
         extTest.remove();
     }
-
 
 }

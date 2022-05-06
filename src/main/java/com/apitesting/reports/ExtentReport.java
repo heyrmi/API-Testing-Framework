@@ -6,8 +6,8 @@ import java.io.File;
 import java.io.IOException;
 
 import com.apitesting.constants.FrameworkConstants;
+import com.apitesting.enums.CategoryType;
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
@@ -68,6 +68,12 @@ public final class ExtentReport {
     public static void addAuthors(String[] authors) {
         for (String temp : authors) {
             ExtentManager.getTest().assignAuthor(temp);
+        }
+    }
+
+    public static void addCategories(CategoryType[] categories) {
+        for (CategoryType temp : categories) {
+            ExtentManager.getTest().assignCategory(temp.toString());
         }
     }
 

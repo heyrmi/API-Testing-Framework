@@ -2,8 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <listeners>
-        <listener>class-name = com.apitesting.listeners.TestListener</listener>
+        <listener class-name="com.apitesting.listeners.TestListener" />
     </listeners>
+
 
     <test parallel="methods" thread-count="5" name="/Users/rahulmishra/Documents/Code/Professional/API-Testing-Framework">
         <classes>
