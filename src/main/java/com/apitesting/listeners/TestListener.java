@@ -34,17 +34,23 @@ public class TestListener implements ITestListener, ISuiteListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ExtentLogger.pass(String.valueOf(result.getThrowable()));
+        ExtentLogger.pass(result.getMethod().getMethodName() + " is passed.");
+        // If the test passes there will not be any throwable
+        // thus below statement is not required
+        // ExtentLogger.pass(String.valueOf(result.getThrowable()));
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ExtentLogger.fail(String.valueOf(result.getThrowable()));
+
+        ExtentLogger.failWithExtentColor(String.valueOf(result.getThrowable()));
+        ExtentLogger.fail(result.getMethod().getMethodName() + " is failed.");
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
         ExtentLogger.skip(String.valueOf(result.getThrowable()));
+        ExtentLogger.skip(result.getMethod().getMethodName() + " is skipped.");
 
     }
 }

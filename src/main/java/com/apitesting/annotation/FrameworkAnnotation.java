@@ -10,8 +10,8 @@ import java.lang.annotation.Target;
 import com.apitesting.enums.CategoryType;
 
 /**
- * This function helps us to pass data to extent reports in the annotation form
- * in test methods.
+ * Here we are making an annotation which will help us to pass data to extent
+ * reports in the annotation form in test methods.
  */
 
 @Retention(RUNTIME)

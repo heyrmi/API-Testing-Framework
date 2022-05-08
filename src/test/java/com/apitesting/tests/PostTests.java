@@ -2,12 +2,10 @@ package com.apitesting.tests;
 
 import com.apitesting.pojo.User;
 import com.apitesting.reports.ExtentLogger;
-import com.apitesting.reports.ExtentManager;
+
 import com.apitesting.requestbuilder.RequestBuilder;
 import com.apitesting.utils.APIUtils;
 import com.apitesting.utils.RandomUtils;
-import com.aventstack.extentreports.markuputils.CodeLanguage;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 import static com.apitesting.utils.RandomUtils.*;
 
@@ -19,6 +17,10 @@ import com.apitesting.constants.FrameworkConstantsWithSingleton;
 import com.apitesting.enums.CategoryType;
 
 import io.restassured.response.Response;
+import io.restassured.specification.QueryableRequestSpecification;
+import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.SpecificationQuerier;
+
 import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -52,10 +54,14 @@ public class PostTests {
                                 .setJobTitle(getRandomJobTitle())
                                 .build();
 
-                Response response = RequestBuilder
+                RequestSpecification requestSpecification = RequestBuilder
                                 .buildRequestForPostCalls()
-                                .body(user)
-                                .post("/api/users");
+                                .body(user);
+
+                // Logging the request
+                ExtentLogger.logRequest(requestSpecification);
+
+                Response response = requestSpecification.post("/api/users");
 
                 Assertions.assertThat(response.getStatusCode()).isEqualTo(201);
 
@@ -72,10 +78,15 @@ public class PostTests {
                                 .replace("fname", RandomUtils.getRandomFirstName())
                                 .replace("givenJob", RandomUtils.getRandomJobTitle());
 
-                Response response = RequestBuilder
+                // Doing this for logging the request and response
+                RequestSpecification requestSpecification = RequestBuilder
                                 .buildRequestForPostCalls()
-                                .body(postRequestBody)
-                                .post("/api/users");
+                                .body(postRequestBody);
+
+                // Logging the request
+                ExtentLogger.logRequest(requestSpecification);
+
+                Response response = requestSpecification.post("/api/users");
 
                 APIUtils.storeStringAsJSONFile(
                                 FrameworkConstants.getJSONResponseFolderPath() + method.getName() + "Response.json",
@@ -99,10 +110,15 @@ public class PostTests {
                                 .replace("fname", RandomUtils.getRandomFirstName())
                                 .replace("givenJob", RandomUtils.getRandomJobTitle());
 
-                Response response = RequestBuilder
+                // Doing this for logging the request and response
+                RequestSpecification requestSpecification = RequestBuilder
                                 .buildRequestForPostCalls()
-                                .body(postRequestBody)
-                                .post("/api/users");
+                                .body(postRequestBody);
+
+                // Logging the request
+                ExtentLogger.logRequest(requestSpecification);
+
+                Response response = requestSpecification.post("/api/users");
 
                 APIUtils.storeStringAsJSONFile(
                                 FrameworkConstantsWithSingleton.getInstance().getJSONResponseFolderPath()
