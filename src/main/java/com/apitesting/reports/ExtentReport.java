@@ -1,15 +1,15 @@
 package com.apitesting.reports;
 
-import java.util.Objects;
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
-
 import com.apitesting.constants.FrameworkConstants;
 import com.apitesting.enums.CategoryType;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Objects;
 
 public final class ExtentReport {
 
@@ -19,17 +19,17 @@ public final class ExtentReport {
     /*
      * private static ExtentReports extent;
      * private static ExtentTest test;
-     * 
+     *
      * public static void initReports() {
      * extent = new ExtentReports();
      * ExtentSparkReporter spark = new ExtentSparkReporter("Reports/Report.html");
      * extent.attachReporter(spark);
      * }
-     * 
+     *
      * public static void tearDownReports() {
      * extent.flush();
      * }
-     * 
+     *
      * public static void createTest(String name) {
      * test = extent.createTest(name);
      * ExtentManager.setTest(test);

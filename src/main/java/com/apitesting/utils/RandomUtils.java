@@ -24,4 +24,12 @@ public final class RandomUtils {
     public static String getRandomJobTitle() {
         return faker.job().title();
     }
+
+    public static String getRandomText() {
+        return faker.lorem().sentence();
+    }
+
+    public static String getRandomParagraph() {
+        return faker.lorem().paragraph();
+    }
 }

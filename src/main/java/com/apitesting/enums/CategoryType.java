@@ -4,5 +4,6 @@ public enum CategoryType {
     REGRESSION,
     SMOKE,
     SANITY,
-    MINIREGRESSION;
+    MINIREGRESSION,
+    STORYTESTING;
 }

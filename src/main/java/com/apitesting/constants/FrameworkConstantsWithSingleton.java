@@ -24,11 +24,8 @@ public class FrameworkConstantsWithSingleton {
 
     // for non-static -> class level
     // else we have to use @Getters on field level
-    private final String JSONRequestFolderPath = System.getProperty("user.dir")
-            + "/src/test/resources/JSON/";
+    private final String JSONRequestFolderPath = System.getProperty("user.dir") + "/src/test/resources/JSON/";
     private final String JSONResponseFolderPath = System.getProperty("user.dir") + "/output/";
-
-    private static @Getter final String configPropertiesFilePath = System.getProperty("user.dir")
-            + "/src/test/resources/config.properties";
+    private final String configPropertiesFilePath = System.getProperty("user.dir") + "/src/test/resources/config.properties";
 
 }

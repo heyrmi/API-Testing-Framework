@@ -1,13 +1,13 @@
 package com.apitesting.annotation;
 
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import com.apitesting.enums.CategoryType;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import com.apitesting.enums.CategoryType;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Here we are making an annotation which will help us to pass data to extent
@@ -19,8 +19,8 @@ import com.apitesting.enums.CategoryType;
 @Documented
 public @interface FrameworkAnnotation {
 
-	public String[] author();
+    public String[] author();
 
-	public CategoryType[] category();
+    public CategoryType[] category();
 
 }

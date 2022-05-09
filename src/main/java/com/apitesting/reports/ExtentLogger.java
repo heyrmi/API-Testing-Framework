@@ -1,14 +1,13 @@
 package com.apitesting.reports;
 
-import java.util.Objects;
-
 import com.aventstack.extentreports.markuputils.CodeLanguage;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-
 import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.SpecificationQuerier;
+
+import java.util.Objects;
 
 public final class ExtentLogger {
     // to avoid external instantiation

@@ -1,13 +1,12 @@
 package com.apitesting.requestbuilder;
 
+import com.apitesting.enums.ConfigProperties;
+import com.apitesting.utils.PropertyUtils;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-import static io.restassured.RestAssured.*;
-
-import com.apitesting.enums.ConfigProperties;
-import com.apitesting.utils.PropertyUtils;
+import static io.restassured.RestAssured.given;
 
 public final class RequestBuilder {
     // to avoid external instantiation
@@ -16,7 +15,7 @@ public final class RequestBuilder {
 
     /**
      * Build Request For Get Calls
-     * 
+     *
      * @return Request Specification
      */
     public static RequestSpecification buildRequestForGetCalls() {

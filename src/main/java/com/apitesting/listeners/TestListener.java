@@ -1,9 +1,11 @@
 package com.apitesting.listeners;
 
 import com.apitesting.annotation.FrameworkAnnotation;
+import com.apitesting.enums.ConfigProperties;
 import com.apitesting.reports.ExtentLogger;
 import com.apitesting.reports.ExtentReport;
-
+import com.apitesting.utils.JiraUtils;
+import com.apitesting.utils.PropertyUtils;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
@@ -24,12 +26,8 @@ public class TestListener implements ITestListener, ISuiteListener {
     @Override
     public void onTestStart(ITestResult result) {
         ExtentReport.createTest(result.getName());
-        ExtentReport.addAuthors(
-                result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class)
-                        .author());
-        ExtentReport.addCategories(
-                result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class)
-                        .category());
+        ExtentReport.addAuthors(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).author());
+        ExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).category());
     }
 
     @Override
@@ -45,6 +43,13 @@ public class TestListener implements ITestListener, ISuiteListener {
 
         ExtentLogger.failWithExtentColor(String.valueOf(result.getThrowable()));
         ExtentLogger.fail(result.getMethod().getMethodName() + " is failed.");
+
+        // If configured then log issue in Jira
+        if (PropertyUtils.getValue(ConfigProperties.CREATEISSUEINJIRA).equalsIgnoreCase("yes")) {
+            String issueInJira = JiraUtils.createIssueInJira(String.valueOf(result.getThrowable()));
+            ExtentLogger.fail("Issue created in Jira: " + PropertyUtils.getValue(ConfigProperties.CREATEISSUEINJIRA) + issueInJira);
+        }
+
     }
 
     @Override

@@ -1,13 +1,13 @@
 package com.apitesting.utils;
 
+import com.apitesting.constants.FrameworkConstants;
+import com.apitesting.enums.ConfigProperties;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-
-import com.apitesting.constants.FrameworkConstants;
-import com.apitesting.enums.ConfigProperties;
 
 public final class PropertyUtils {
     // to avoid external instantiation
@@ -38,7 +38,7 @@ public final class PropertyUtils {
     /**
      * Return the value for the corresponding key
      * Enums are used so errors can be minimised
-     * 
+     *
      * @param key
      * @return
      */

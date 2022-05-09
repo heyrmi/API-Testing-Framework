@@ -1,6 +1,7 @@
 package com.apitesting.reports;
 
 import com.aventstack.extentreports.ExtentTest;
+
 import java.util.Objects;
 
 public final class ExtentManager {
@@ -15,12 +16,12 @@ public final class ExtentManager {
 
     /*
      * private static ThreadLocal<ExtentTest> threadLocalTest = new ThreadLocal<>();
-     * 
+     *
      * // Getter for test
      * static ExtentTest getTest() {
      * return threadLocalTest.get();
      * }
-     * 
+     *
      * // Setter for test
      * static void setTest(ExtentTest test) {
      * threadLocalTest.set(test);

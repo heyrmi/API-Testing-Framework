@@ -5,18 +5,17 @@ import com.apitesting.enums.CategoryType;
 import com.apitesting.reports.ExtentLogger;
 import com.apitesting.requestbuilder.RequestBuilder;
 import io.restassured.response.Response;
-import org.testng.annotations.Test;
 import org.assertj.core.api.Assertions;
-import static org.assertj.core.api.Assertions.*;
+import org.testng.annotations.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GetTests {
 
 
-
-
     @Test
-    @FrameworkAnnotation(author = { "Lex" }, category = { CategoryType.SMOKE })
-    public void getUsersDetails(){
+    @FrameworkAnnotation(author = {"Lex"}, category = {CategoryType.SMOKE})
+    public void getUsersDetails() {
         Response response = RequestBuilder.buildRequestForGetCalls()
                 .get("/api/users?page=2");
 
@@ -35,8 +34,8 @@ public class GetTests {
     }
 
     @Test
-    @FrameworkAnnotation(author = { "Joe" }, category = { CategoryType.SMOKE })
-    public void getUserDetails(){
+    @FrameworkAnnotation(author = {"Joe"}, category = {CategoryType.SMOKE})
+    public void getUserDetails() {
         Response response = RequestBuilder.buildRequestForGetCalls()
                 .pathParams("id", 2)
                 .get("/api/users/{id}");
