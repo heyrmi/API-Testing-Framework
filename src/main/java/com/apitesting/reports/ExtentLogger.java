@@ -31,9 +31,14 @@ public final class ExtentLogger {
         ExtentManager.getTest().info(message);
     }
 
+    public static void skipWithExtentColor(String message) {
+        ExtentManager.getTest().skip(MarkupHelper.createLabel(message, ExtentColor.ORANGE));
+    }
+
     public static void skip(String message) {
         ExtentManager.getTest().skip(message);
     }
+
 
     public static void logResponse(String message) {
         info("Response Details: ");

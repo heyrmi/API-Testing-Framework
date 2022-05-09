@@ -13,6 +13,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.assertj.core.api.Assertions;
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
@@ -23,11 +24,18 @@ import static com.apitesting.utils.RandomUtils.getRandomJobTitle;
 public class PostTests {
 
     @Test
+    @FrameworkAnnotation(author = {"Zeta"}, category = {CategoryType.STORYTESTING})
     public void postUsers() {
         // TODO: Make method for post multiple users
         // Can't be made since ReqRes.in doesn't support this request
         // Adding fake assertion to pass this test
         Assert.assertTrue(false);
+    }
+
+    @Test
+    @FrameworkAnnotation(author = {"Alex"}, category = {CategoryType.STORYTESTING})
+    public void postUserForSkip() {
+        throw new SkipException("Data not available");
     }
 
     @Test

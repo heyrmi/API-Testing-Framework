@@ -17,6 +17,7 @@
             <class name="com.apitesting.tests.PostTests">
                 <methods>
                     <include name="postUsers" />
+                    <include name="postUserForSkip" />
                     <include name="postUser" />
                     <include name="postRequestUsingExternalFile" />
                     <include name="postRequestUsingExternalFileUsingSingleton" />

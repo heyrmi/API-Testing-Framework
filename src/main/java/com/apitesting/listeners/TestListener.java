@@ -26,8 +26,10 @@ public class TestListener implements ITestListener, ISuiteListener {
     @Override
     public void onTestStart(ITestResult result) {
         ExtentReport.createTest(result.getName());
-        ExtentReport.addAuthors(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).author());
-        ExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).category());
+        ExtentReport.addAuthors(result.getMethod().getConstructorOrMethod().getMethod()
+                .getAnnotation(FrameworkAnnotation.class).author());
+        ExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod()
+                .getAnnotation(FrameworkAnnotation.class).category());
     }
 
     @Override
@@ -47,14 +49,15 @@ public class TestListener implements ITestListener, ISuiteListener {
         // If configured then log issue in Jira
         if (PropertyUtils.getValue(ConfigProperties.CREATEISSUEINJIRA).equalsIgnoreCase("yes")) {
             String issueInJira = JiraUtils.createIssueInJira(String.valueOf(result.getThrowable()));
-            ExtentLogger.fail("Issue created in Jira: " + PropertyUtils.getValue(ConfigProperties.CREATEISSUEINJIRA) + issueInJira);
+            ExtentLogger.fail("Issue created in Jira: " + PropertyUtils.getValue(ConfigProperties.CREATEISSUEINJIRA)
+                    + issueInJira);
         }
 
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ExtentLogger.skip(String.valueOf(result.getThrowable()));
+        ExtentLogger.skipWithExtentColor(String.valueOf(result.getThrowable()));
         ExtentLogger.skip(result.getMethod().getMethodName() + " is skipped.");
 
     }

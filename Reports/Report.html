@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">API-Automation</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">May 9, 2022 09:49:16 AM</span></a>
+<a href="#"><span class="badge badge-primary">May 9, 2022 12:07:31 PM</span></a>
 </li>
 </ul>
 </div>
@@ -78,6 +78,7 @@
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -85,26 +86,178 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i></a>
 <ul id="author-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">Lex</a><a class="dropdown-item" href="#">Rahul</a><a class="dropdown-item" href="#">Joe</a><a class="dropdown-item" href="#">Zarvis</a>
+<a class="dropdown-item" href="#">Lex</a><a class="dropdown-item" href="#">Joe</a><a class="dropdown-item" href="#">Zeta</a><a class="dropdown-item" href="#">Rahul</a><a class="dropdown-item" href="#">Alex</a><a class="dropdown-item" href="#">Zarvis</a>
 </ul>
 </li>
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">REGRESSION</a><a class="dropdown-item" href="#">MINIREGRESSION</a><a class="dropdown-item" href="#">SMOKE</a>
+<a class="dropdown-item" href="#">REGRESSION</a><a class="dropdown-item" href="#">SMOKE</a><a class="dropdown-item" href="#">STORYTESTING</a><a class="dropdown-item" href="#">MINIREGRESSION</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
         <li class="test-item"  status="pass" test-id="1"
+          author="Zarvis"
+          tag="SMOKE"
+          device="">
+          <div class="test-detail">
+            <p class="name">postUser</p>
+            <p class="text-sm">
+              <span>12:07:32 PM</span> / <span>00:00:06:217</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">postUser</h5>
+<span class='badge badge-success'>05.09.2022 12:07:32 PM</span>
+<span class='badge badge-danger'>05.09.2022 12:07:38 PM</span>
+<span class='badge badge-default'>00:00:06:217</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Zarvis</span>
+<span class="badge badge-pill badge-default">SMOKE</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:07:36 PM</td>
+        <td>
+          Request Details: 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:07:36 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-2'></div>
+ <script>
+  function jsonTreeCreate2() { 
+   document.getElementById('code-block-json-2').innerHTML = JSONTree.create({"name":"Randal","jobTitle":"Internal Advertising Architect"}); 
+  }
+  jsonTreeCreate2();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:07:36 PM</td>
+        <td>
+          Headers: 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:07:36 PM</td>
+        <td>
+          Content-Type: application/json
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:07:38 PM</td>
+        <td>
+          postUser is passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author="Joe"
+          tag="SMOKE"
+          device="">
+          <div class="test-detail">
+            <p class="name">getUserDetails</p>
+            <p class="text-sm">
+              <span>12:07:32 PM</span> / <span>00:00:06:759</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">getUserDetails</h5>
+<span class='badge badge-success'>05.09.2022 12:07:32 PM</span>
+<span class='badge badge-danger'>05.09.2022 12:07:38 PM</span>
+<span class='badge badge-default'>00:00:06:759</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Joe</span>
+<span class="badge badge-pill badge-default">SMOKE</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:07:38 PM</td>
+        <td>
+          Response Details: 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:07:38 PM</td>
+        <td>
+           <div class='json-tree' id='code-block-json-3'></div>
+ <script>
+  function jsonTreeCreate3() { 
+   document.getElementById('code-block-json-3').innerHTML = JSONTree.create({
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}); 
+  }
+  jsonTreeCreate3();
+ </script>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:07:38 PM</td>
+        <td>
+          getUserDetails is passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
           author="Lex"
           tag="SMOKE"
           device="">
           <div class="test-detail">
             <p class="name">getUsersDetails</p>
             <p class="text-sm">
-              <span>9:49:16 AM</span> / <span>00:00:06:219</span>
+              <span>12:07:32 PM</span> / <span>00:00:06:188</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -113,10 +266,10 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">getUsersDetails</h5>
-<span class='badge badge-success'>05.09.2022 9:49:16 AM</span>
-<span class='badge badge-danger'>05.09.2022 9:49:22 AM</span>
-<span class='badge badge-default'>00:00:06:219</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-success'>05.09.2022 12:07:32 PM</span>
+<span class='badge badge-danger'>05.09.2022 12:07:38 PM</span>
+<span class='badge badge-default'>00:00:06:188</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
@@ -129,14 +282,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:22 AM</td>
+        <td>12:07:38 PM</td>
         <td>
           Response Details: 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:22 AM</td>
+        <td>12:07:38 PM</td>
         <td>
            <div class='json-tree' id='code-block-json-4'></div>
  <script>
@@ -203,7 +356,7 @@
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:49:22 AM</td>
+        <td>12:07:38 PM</td>
         <td>
           getUsersDetails is passed.
         </td>
@@ -213,74 +366,48 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="2"
-          author="Joe"
-          tag="SMOKE"
+        <li class="test-item"  status="fail" test-id="5"
+          author="Zeta"
+          tag="STORYTESTING"
           device="">
           <div class="test-detail">
-            <p class="name">getUserDetails</p>
+            <p class="name">postUsers</p>
             <p class="text-sm">
-              <span>9:49:16 AM</span> / <span>00:00:06:821</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>12:07:32 PM</span> / <span>00:00:00:072</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">getUserDetails</h5>
-<span class='badge badge-success'>05.09.2022 9:49:16 AM</span>
-<span class='badge badge-danger'>05.09.2022 9:49:23 AM</span>
-<span class='badge badge-default'>00:00:06:821</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<h5 class="test-status text-fail">postUsers</h5>
+<span class='badge badge-success'>05.09.2022 12:07:32 PM</span>
+<span class='badge badge-danger'>05.09.2022 12:07:32 PM</span>
+<span class='badge badge-default'>00:00:00:072</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">Joe</span>
-<span class="badge badge-pill badge-default">SMOKE</span></div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Zeta</span>
+<span class="badge badge-pill badge-default">STORYTESTING</span></div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:22 AM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:07:32 PM</td>
         <td>
-          Response Details: 
+          <span class='badge white-text red'>java.lang.AssertionError: expected [true] but found [false]</span>
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:22 AM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:07:32 PM</td>
         <td>
-           <div class='json-tree' id='code-block-json-3'></div>
- <script>
-  function jsonTreeCreate3() { 
-   document.getElementById('code-block-json-3').innerHTML = JSONTree.create({
-    "data": {
-        "id": 2,
-        "email": "janet.weaver@reqres.in",
-        "first_name": "Janet",
-        "last_name": "Weaver",
-        "avatar": "https://reqres.in/img/faces/2-image.jpg"
-    },
-    "support": {
-        "url": "https://reqres.in/#support-heading",
-        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
-    }
-}); 
-  }
-  jsonTreeCreate3();
- </script>
-
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:49:23 AM</td>
-        <td>
-          getUserDetails is passed.
+          postUsers is failed.
         </td>
       </tr>
   </tbody>
@@ -288,14 +415,63 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="5"
+        <li class="test-item"  status="skip" test-id="2"
+          author="Alex"
+          tag="STORYTESTING"
+          device="">
+          <div class="test-detail">
+            <p class="name">postUserForSkip</p>
+            <p class="text-sm">
+              <span>12:07:32 PM</span> / <span>00:00:00:072</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">postUserForSkip</h5>
+<span class='badge badge-success'>05.09.2022 12:07:32 PM</span>
+<span class='badge badge-danger'>05.09.2022 12:07:32 PM</span>
+<span class='badge badge-default'>00:00:00:072</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Alex</span>
+<span class="badge badge-pill badge-default">STORYTESTING</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>12:07:32 PM</td>
+        <td>
+          <span class='badge white-text orange'>org.testng.SkipException: Data not available</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>12:07:32 PM</td>
+        <td>
+          postUserForSkip is skipped.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
           author="Rahul"
           tag="MINIREGRESSION"
           device="">
           <div class="test-detail">
             <p class="name">postRequestUsingExternalFile</p>
             <p class="text-sm">
-              <span>9:49:16 AM</span> / <span>00:00:06:268</span>
+              <span>12:07:32 PM</span> / <span>00:00:06:137</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -304,10 +480,10 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">postRequestUsingExternalFile</h5>
-<span class='badge badge-success'>05.09.2022 9:49:16 AM</span>
-<span class='badge badge-danger'>05.09.2022 9:49:22 AM</span>
-<span class='badge badge-default'>00:00:06:268</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-success'>05.09.2022 12:07:32 PM</span>
+<span class='badge badge-danger'>05.09.2022 12:07:38 PM</span>
+<span class='badge badge-default'>00:00:06:137</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
@@ -320,71 +496,71 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:19 AM</td>
+        <td>12:07:35 PM</td>
         <td>
           Request Details: 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
+        <td>12:07:35 PM</td>
         <td>
-           <div class='json-tree' id='code-block-json-0'></div>
+           <div class='json-tree' id='code-block-json-1'></div>
  <script>
-  function jsonTreeCreate0() { 
-   document.getElementById('code-block-json-0').innerHTML = JSONTree.create({
-    "name": "Raul",
-    "job": "Dynamic Mining Coordinator"
+  function jsonTreeCreate1() { 
+   document.getElementById('code-block-json-1').innerHTML = JSONTree.create({
+    "name": "Aide",
+    "job": "Investor Retail Analyst"
 }); 
   }
-  jsonTreeCreate0();
+  jsonTreeCreate1();
  </script>
 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
+        <td>12:07:35 PM</td>
         <td>
           Headers: 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
+        <td>12:07:35 PM</td>
         <td>
           Content-Type: application/json
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:22 AM</td>
+        <td>12:07:38 PM</td>
         <td>
           Response Details: 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:22 AM</td>
+        <td>12:07:38 PM</td>
         <td>
-           <div class='json-tree' id='code-block-json-5'></div>
+           <div class='json-tree' id='code-block-json-6'></div>
  <script>
-  function jsonTreeCreate5() { 
-   document.getElementById('code-block-json-5').innerHTML = JSONTree.create({
-    "name": "Raul",
-    "job": "Dynamic Mining Coordinator",
-    "id": "241",
-    "createdAt": "2022-05-09T04:19:22.731Z"
+  function jsonTreeCreate6() { 
+   document.getElementById('code-block-json-6').innerHTML = JSONTree.create({
+    "name": "Aide",
+    "job": "Investor Retail Analyst",
+    "id": "349",
+    "createdAt": "2022-05-09T06:37:38.406Z"
 }); 
   }
-  jsonTreeCreate5();
+  jsonTreeCreate6();
  </script>
 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:49:22 AM</td>
+        <td>12:07:38 PM</td>
         <td>
           postRequestUsingExternalFile is passed.
         </td>
@@ -394,138 +570,14 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="4"
-          author="Zarvis"
-          tag="SMOKE"
-          device="">
-          <div class="test-detail">
-            <p class="name">postUser</p>
-            <p class="text-sm">
-              <span>9:49:16 AM</span> / <span>00:00:06:645</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">postUser</h5>
-<span class='badge badge-success'>05.09.2022 9:49:16 AM</span>
-<span class='badge badge-danger'>05.09.2022 9:49:23 AM</span>
-<span class='badge badge-default'>00:00:06:645</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">Zarvis</span>
-<span class="badge badge-pill badge-default">SMOKE</span></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
-        <td>
-          Request Details: 
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
-        <td>
-           <div class='json-tree' id='code-block-json-2'></div>
- <script>
-  function jsonTreeCreate2() { 
-   document.getElementById('code-block-json-2').innerHTML = JSONTree.create({"name":"Scott","jobTitle":"Global IT Orchestrator"}); 
-  }
-  jsonTreeCreate2();
- </script>
-
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
-        <td>
-          Headers: 
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
-        <td>
-          Content-Type: application/json
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:49:23 AM</td>
-        <td>
-          postUser is passed.
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="3"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">postUsers</p>
-            <p class="text-sm">
-              <span>9:49:16 AM</span> / <span>00:00:00:026</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">postUsers</h5>
-<span class='badge badge-success'>05.09.2022 9:49:16 AM</span>
-<span class='badge badge-danger'>05.09.2022 9:49:16 AM</span>
-<span class='badge badge-default'>00:00:00:026</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:49:16 AM</td>
-        <td>
-          <span class='badge white-text red'>java.lang.NullPointerException</span>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:49:16 AM</td>
-        <td>
-          postUsers is failed.
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="6"
+        <li class="test-item"  status="pass" test-id="7"
           author="Rahul"
           tag="REGRESSION"
           device="">
           <div class="test-detail">
             <p class="name">postRequestUsingExternalFileUsingSingleton</p>
             <p class="text-sm">
-              <span>9:49:16 AM</span> / <span>00:00:06:203</span>
+              <span>12:07:32 PM</span> / <span>00:00:06:134</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -534,10 +586,10 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">postRequestUsingExternalFileUsingSingleton</h5>
-<span class='badge badge-success'>05.09.2022 9:49:16 AM</span>
-<span class='badge badge-danger'>05.09.2022 9:49:22 AM</span>
-<span class='badge badge-default'>00:00:06:203</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-success'>05.09.2022 12:07:32 PM</span>
+<span class='badge badge-danger'>05.09.2022 12:07:38 PM</span>
+<span class='badge badge-default'>00:00:06:134</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
@@ -550,71 +602,71 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:19 AM</td>
+        <td>12:07:35 PM</td>
         <td>
           Request Details: 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
+        <td>12:07:35 PM</td>
         <td>
-           <div class='json-tree' id='code-block-json-1'></div>
+           <div class='json-tree' id='code-block-json-0'></div>
  <script>
-  function jsonTreeCreate1() { 
-   document.getElementById('code-block-json-1').innerHTML = JSONTree.create({
-    "name": "Alphonse",
-    "job": "National Technology Associate"
+  function jsonTreeCreate0() { 
+   document.getElementById('code-block-json-0').innerHTML = JSONTree.create({
+    "name": "Anibal",
+    "job": "Investor Banking Planner"
 }); 
   }
-  jsonTreeCreate1();
+  jsonTreeCreate0();
  </script>
 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
+        <td>12:07:35 PM</td>
         <td>
           Headers: 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:20 AM</td>
+        <td>12:07:35 PM</td>
         <td>
           Content-Type: application/json
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:22 AM</td>
+        <td>12:07:38 PM</td>
         <td>
           Response Details: 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>9:49:22 AM</td>
+        <td>12:07:38 PM</td>
         <td>
-           <div class='json-tree' id='code-block-json-6'></div>
+           <div class='json-tree' id='code-block-json-5'></div>
  <script>
-  function jsonTreeCreate6() { 
-   document.getElementById('code-block-json-6').innerHTML = JSONTree.create({
-    "name": "Alphonse",
-    "job": "National Technology Associate",
-    "id": "364",
-    "createdAt": "2022-05-09T04:19:22.725Z"
+  function jsonTreeCreate5() { 
+   document.getElementById('code-block-json-5').innerHTML = JSONTree.create({
+    "name": "Anibal",
+    "job": "Investor Banking Planner",
+    "id": "878",
+    "createdAt": "2022-05-09T06:37:38.388Z"
 }); 
   }
-  jsonTreeCreate6();
+  jsonTreeCreate5();
  </script>
 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:49:22 AM</td>
+        <td>12:07:38 PM</td>
         <td>
           postRequestUsingExternalFileUsingSingleton is passed.
         </td>
@@ -637,7 +689,7 @@
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -665,42 +717,9 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
+<td>12:07:32 PM</td>
 <td>
-<a href="#" class="linked" test-id='6' id='6'>postRequestUsingExternalFileUsingSingleton</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">MINIREGRESSION</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>MINIREGRESSION</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
-<td>
-<a href="#" class="linked" test-id='5' id='5'>postRequestUsingExternalFile</a>
+<a href="#" class="linked" test-id='7' id='7'>postRequestUsingExternalFileUsingSingleton</a>
 </td>
 </tr>
 </tbody>
@@ -731,23 +750,98 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
+<td>12:07:32 PM</td>
 <td>
-<a href="#" class="linked" test-id='4' id='4'>postUser</a>
+<a href="#" class="linked" test-id='1' id='1'>postUser</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
+<td>12:07:32 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>getUserDetails</a>
+<a href="#" class="linked" test-id='4' id='4'>getUsersDetails</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
+<td>12:07:32 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='1'>getUsersDetails</a>
+<a href="#" class="linked" test-id='3' id='3'>getUserDetails</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">STORYTESTING</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>STORYTESTING</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>12:07:32 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>postUserForSkip</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:07:32 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>postUsers</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">MINIREGRESSION</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>MINIREGRESSION</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:07:32 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>postRequestUsingExternalFile</a>
 </td>
 </tr>
 </tbody>
@@ -766,7 +860,7 @@
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Author</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">6</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -794,49 +888,9 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
+<td>12:07:32 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='1'>getUsersDetails</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>2</span>
-</span>
-<p class="name">Rahul</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>Rahul</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
-<td>
-<a href="#" class="linked" test-id='5' id='5'>postRequestUsingExternalFile</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
-<td>
-<a href="#" class="linked" test-id='6' id='6'>postRequestUsingExternalFileUsingSingleton</a>
+<a href="#" class="linked" test-id='4' id='4'>getUsersDetails</a>
 </td>
 </tr>
 </tbody>
@@ -867,9 +921,115 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
+<td>12:07:32 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>getUserDetails</a>
+<a href="#" class="linked" test-id='3' id='3'>getUserDetails</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">Zeta</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Zeta</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:07:32 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>postUsers</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">Rahul</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Rahul</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:07:32 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>postRequestUsingExternalFile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:07:32 PM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>postRequestUsingExternalFileUsingSingleton</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">Alex</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Alex</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>12:07:32 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>postUserForSkip</a>
 </td>
 </tr>
 </tbody>
@@ -900,9 +1060,9 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>09:49:16 AM</td>
+<td>12:07:32 PM</td>
 <td>
-<a href="#" class="linked" test-id='4' id='4'>postUser</a>
+<a href="#" class="linked" test-id='1' id='1'>postUser</a>
 </td>
 </tr>
 </tbody>
@@ -922,13 +1082,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>May 9, 2022 09:49:16 AM</h3>
+<h3>May 9, 2022 12:07:31 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>May 9, 2022 09:49:23 AM</h3>
+<h3>May 9, 2022 12:07:38 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -956,13 +1116,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='83%'>
+<div><small data-tooltip='71%'>
 <b>5</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='16%'><b>1</b> tests failed,
-<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+<small data-tooltip='14%'><b>1</b> tests failed,
+<b>1</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
 </div>
@@ -979,10 +1139,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='18%'><b>5</b> events passed</small></div>
+<div><small data-tooltip='17%'><b>5</b> events passed</small></div>
 <div>
-<small data-tooltip='7%'><b>2</b> events failed,
-<b data-tooltip='%'>20</b> others
+<small data-tooltip='6%'><b>2</b> events failed,
+<b data-tooltip='%'>22</b> others
 </small>
 </div>
 </div>
@@ -998,7 +1158,7 @@
 </div></div>
 <script>
 var timeline = {
-"getUsersDetails":6.219,"getUserDetails":6.821,"postRequestUsingExternalFile":6.268,"postUser":6.645,"postUsers":0.026,"postRequestUsingExternalFileUsingSingleton":6.203
+"postUser":6.217,"getUserDetails":6.759,"getUsersDetails":6.188,"postUsers":0.072,"postUserForSkip":0.072,"postRequestUsingExternalFile":6.137,"postRequestUsingExternalFileUsingSingleton":6.134
 };
 </script>
 <div class="row">
@@ -1017,6 +1177,22 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
+<td>Joe</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Zeta</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
 <td>Rahul</td>
 <td>2</td>
 <td>0</td>
@@ -1025,12 +1201,12 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>Joe</td>
+<td>Alex</td>
+<td>0</td>
+<td>0</td>
 <td>1</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 <tr>
 <td>Zarvis</td>
@@ -1058,16 +1234,24 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>MINIREGRESSION</td>
-<td>1</td>
+<td>SMOKE</td>
+<td>3</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
 </tr>
 <tr>
-<td>SMOKE</td>
-<td>3</td>
+<td>STORYTESTING</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>MINIREGRESSION</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1085,7 +1269,7 @@ parentCount: 5,
 passParent: 5,
 failParent: 1,
 warningParent: 0,
-skipParent: 0,
+skipParent: 1,
 childCount: 5,
 passChild: 0,
 failChild: 0,
@@ -1102,7 +1286,7 @@ eventsCount: 5,
 passEvents: 5,
 failEvents: 2,
 warningEvents: 0,
-skipEvents: 0,
+skipEvents: 2,
 infoEvents: 20
 };
 </script>        </div>
