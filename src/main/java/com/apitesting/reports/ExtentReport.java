@@ -54,11 +54,12 @@ public final class ExtentReport {
             extent.flush();
         }
         ExtentManager.unload();
-        try {
-            Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportPath()).toURI());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // try {
+        // Desktop.getDesktop().browse(new
+        // File(FrameworkConstants.getExtentReportPath()).toURI());
+        // } catch (IOException e) {
+        // e.printStackTrace();
+        // }
     }
 
     public static void createTest(String testcasename) {
