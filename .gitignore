@@ -1,7 +1,5 @@
-/target
-/.idea
-.idea
-/.vscode
-.vscode
+target/**
+.idea/
+.vscode/
 .DS_Store
-/.DS_Store
+Reports/
