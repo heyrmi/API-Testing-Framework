@@ -46,7 +46,7 @@ jobs:
         #check for maven-wrapper availablity in the Java installed
         #feasibility for some other tool other than JIB for pusing it to DockerHub
         run: |
-          ./mvnw --no-transfer-progress clean package \
+          mvn --no-transfer-progress clean package \
             -P jib-push-to-dockerhub \
               -Dapp.image.tag=${{steps.build-number.outputs.BUILD_NUMBER}}
 
