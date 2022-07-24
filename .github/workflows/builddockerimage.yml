@@ -42,14 +42,16 @@ jobs:
           username: ${{ env.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      - name: Maven Clean Package and Push to Dockerhub
+      - name: Maven Clean Package
+        continue-on-error: true
+        run: mvn --no-transfer-progress clean package
+
+      - name: Push to Dockerhub
         #check for maven-wrapper availablity in the Java installed
         #feasibility for some other tool other than JIB for pusing it to DockerHub
-        continue-on-error: true
         run: |
-          mvn --no-transfer-progress clean package \
-            -P jib-push-to-dockerhub \
-              -Dapp.image.tag=${{steps.build-number.outputs.BUILD_NUMBER}}
+          -P jib-push-to-dockerhub \
+            -Dapp.image.tag=${{steps.build-number.outputs.BUILD_NUMBER}}
 
       - uses: 8398a7/action-slack@v3
         with:
