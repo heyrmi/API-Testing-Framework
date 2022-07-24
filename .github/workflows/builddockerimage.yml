@@ -31,9 +31,6 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           cache: maven
-      - name: Build with Maven
-        continue-on-error: true
-        run: mvn -B package --file pom.xml
 
       - name: Build Number
         id: build-number
