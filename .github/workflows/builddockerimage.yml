@@ -45,6 +45,7 @@ jobs:
       - name: Maven Clean Package and Push to Dockerhub
         #check for maven-wrapper availablity in the Java installed
         #feasibility for some other tool other than JIB for pusing it to DockerHub
+        continue-on-error: true
         run: |
           mvn --no-transfer-progress clean package \
             -P jib-push-to-dockerhub \
