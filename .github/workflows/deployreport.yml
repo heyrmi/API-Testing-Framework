@@ -2,9 +2,9 @@ name: Github Page Report Deploy
 
 on:
   push:
-    branches: ["master"]
+    branches: ["experimental-dev"]
   pull_request:
-    branches: ["master"]
+    branches: ["experimental-dev"]
 
 jobs:
   build:
