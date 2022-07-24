@@ -29,3 +29,8 @@ Open the terminal and make a seperate directory for test reports
 mkdir TestReports && cd TestReports
 docker run -v ${PWD}:/home/apiframework/Reports heyrmi/apitestingframework
 ```
+
+## Reports: 
+
+Report will be automatically published here: [Latest-Execution-Report](https://heyrmi.github.io/API-Testing-Framework)
+This is done through Github Actions.
