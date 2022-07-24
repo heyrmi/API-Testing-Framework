@@ -6,6 +6,7 @@ This is an Rest-API testing framework which is made from
 - TestNG
 - Extent Reports
 - Java Faker
+- Github Actions
 
 ---
 
@@ -33,4 +34,5 @@ docker run -v ${PWD}:/home/apiframework/Reports heyrmi/apitestingframework
 ## Reports: 
 
 Report will be automatically published here: [Latest-Execution-Report](https://heyrmi.github.io/API-Testing-Framework)
+
 This is done through Github Actions.
