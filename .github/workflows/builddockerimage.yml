@@ -49,7 +49,7 @@ jobs:
       - name: Push to Dockerhub
         #check for maven-wrapper availablity in the Java installed
         #feasibility for some other tool other than JIB for pusing it to DockerHub
-        run: mvn compile jib:build
+        run: mvn --no-transfer-progress compile jib:build
 
       - uses: 8398a7/action-slack@v3
         with:
