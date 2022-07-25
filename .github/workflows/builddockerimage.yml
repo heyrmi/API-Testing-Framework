@@ -32,6 +32,7 @@ jobs:
         with:
           username: ${{ env.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v2
