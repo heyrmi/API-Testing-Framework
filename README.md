@@ -8,14 +8,27 @@ This is an Rest-API testing framework which is made from
 - Java Faker
 - Github Actions
 
----
+
+## Features:
+
+- Slack integration: Get slack messages on each action (Report Deployment, Docker Deployment) after each test/build.
+- Lastest Exection Report: Support for lastest exection report using Github Pages
+- Docker Image: Support for automatic docker image build and push to docker hub using GithubActions
+
+
+
+### Note:
 
 - Please run this through TestNG XML, running individual tests from IDE will break the framework
 - Since it depends on the TestNG listeners to start execution
 
----
+
+
 
 ## How to run:
+
+
+
 
 Open Terminal in API-Testing-Framework and run (for detailed execution):
 
