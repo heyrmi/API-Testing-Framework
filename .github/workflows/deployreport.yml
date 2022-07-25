@@ -2,15 +2,16 @@ name: Github Page Report Deploy
 
 on:
   push:
-    branches: ["experimental-dev"]
+    branches: ["master"]
   pull_request:
-    branches: ["experimental-dev"]
+    branches: ["master"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      #Slack Notification at start
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
@@ -37,6 +38,7 @@ jobs:
           branch: gh-pages
           folder: ./Reports
 
+      #Slack Notification at start
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
