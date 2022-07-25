@@ -17,6 +17,6 @@ public final class FrameworkConstants {
         private static @Getter final String configPropertiesFilePath = System.getProperty("user.dir")
                         + "/src/test/resources/config.properties";
         private static @Getter final String extentReportPath = System.getProperty("user.dir")
-                        + "/Reports/latestreport/index.html";
+                        + "/Reports/index.html";
 
 }
