@@ -10,11 +10,12 @@ env:
   # DockerHub
   DOCKER_HUB_USERNAME: heyrmi
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
 
+jobs:
+  DockerPublish:
+    runs-on: ubuntu-latest
     steps:
+      #Slack Notification at start
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
@@ -25,36 +26,38 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - uses: actions/checkout@v3
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          java-version: "11"
-          distribution: "temurin"
-          cache: maven
-
-      - name: Build Number
-        id: build-number
-        run: echo "name=BUILD_NUMBER::$(date '+%-d.%-m.%Y.%-H.%-M.%-S')"
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ env.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v2
 
-      - name: Maven Clean Package
-        continue-on-error: true
-        run: mvn --no-transfer-progress clean package
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.DOCKER_HUB_USERNAME }}/apitestingframework
 
-      - name: Push to Dockerhub
-        #check for maven-wrapper availablity in the Java installed
-        #feasibility for some other tool other than JIB for pusing it to DockerHub
-        run: mvn --no-transfer-progress compile jib:build
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
 
+        #Slack Notification after deployment
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-          text: ":white_check_mark: pushed heyrmi/API-Testing-Framework:${{steps.build-number.outputs.BUILD_NUMBER}} to docker hub... https://hub.docker.com/repository/docker/heyrmi/apitestingframework"
+          text: ":white_check_mark: pushed heyrmi/API-Testing-Framework to docker hub: https://hub.docker.com/repository/docker/heyrmi/apitestingframework"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
