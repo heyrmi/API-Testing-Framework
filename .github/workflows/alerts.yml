@@ -20,13 +20,13 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "Tests Passed: ${{ github.event.workflow_run.conclusion }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+              "text": "Tests Passed: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ github.event.workflow_run.conclusion }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
                   }
                 }
               ]
