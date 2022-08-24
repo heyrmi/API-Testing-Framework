@@ -20,14 +20,18 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "Tests Passed: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-              "blocks": [
+             "text": "Reports Deployed (Completed)",
+              "attachments": [
                 {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                  }
+                  "pretext": "Deployment Finished",
+                  "color": "28a745",
+                  "fields": [
+                    {
+                      "title": "Status",
+                      "short": true,
+                      "value": "Completed"
+                    }
+                  ]
                 }
               ]
             }
@@ -47,14 +51,18 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "Tests Passed: ${{ github.event.workflow_run.conclusion }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-              "blocks": [
+             "text": "Reports Deployed (Failed)",
+              "attachments": [
                 {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ github.event.workflow_run.conclusion }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                  }
+                  "pretext": "Deployment Failed",
+                  "color": "e32803",
+                  "fields": [
+                    {
+                      "title": "Status",
+                      "short": true,
+                      "value": "Failed"
+                    }
+                  ]
                 }
               ]
             }
