@@ -1,3 +1,8 @@
+[![Report](https://github.com/heyrmi/API-Testing-Framework/actions/workflows/deployreport.yml/badge.svg?branch=master)](https://github.com/heyrmi/API-Testing-Framework/actions/workflows/deployreport.yml)
+[![Docker Image](https://github.com/heyrmi/API-Testing-Framework/actions/workflows/builddockerimage.yml/badge.svg?branch=master)](https://github.com/heyrmi/API-Testing-Framework/actions/workflows/builddockerimage.yml)
+[![Alerts](https://github.com/heyrmi/API-Testing-Framework/actions/workflows/alerts.yml/badge.svg?branch=master)](https://github.com/heyrmi/API-Testing-Framework/actions/workflows/alerts.yml)
+
+
 # API-Testing-Framework
 
 This is an Rest-API testing framework which is made from
