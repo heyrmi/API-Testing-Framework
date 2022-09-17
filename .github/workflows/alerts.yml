@@ -3,9 +3,13 @@ name: Alerts
 
 on:
   workflow_run:
-    workflows: [Github Page Report Deploy]
+    workflows: ["Report", "Docker Image"]
     branches: [master]
     types: [completed]
+
+env:
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+  SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
 
 jobs:
   on-success:
@@ -17,28 +21,24 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.18.0
         with:
-          # For posting a rich message using Block Kit
           payload: |
             {
-             "text": "Reports Deployed (Completed)",
+             "text": "CI (Completed)",
               "attachments": [
                 {
-                  "pretext": "Deployment Finished",
+                  "pretext": "CI Passed",
                   "color": "28a745",
                   "fields": [
                     {
                       "title": "Status",
                       "short": true,
-                      "value": "Completed"
+                      "value": "Passed"
                     }
                   ]
                 }
               ]
             }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-    
+
   on-failure:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
@@ -48,13 +48,12 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.18.0
         with:
-          # For posting a rich message using Block Kit
           payload: |
             {
-             "text": "Reports Deployed (Failed)",
+             "text": "CI (Failed)",
               "attachments": [
                 {
-                  "pretext": "Deployment Failed",
+                  "pretext": "CI Failed",
                   "color": "e32803",
                   "fields": [
                     {
@@ -66,6 +65,3 @@ jobs:
                 }
               ]
             }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

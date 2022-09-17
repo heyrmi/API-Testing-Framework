@@ -1,4 +1,4 @@
-name: Build Docker Image and deploy to Docker Hub
+name: Docker Image
 
 on:
   push:
@@ -7,24 +7,12 @@ on:
   workflow_dispatch:
 
 env:
-  # DockerHub
   DOCKER_HUB_USERNAME: heyrmi
-
 
 jobs:
   DockerPublish:
     runs-on: ubuntu-latest
     steps:
-      #Slack Notification at start
-      - uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-          #TODO: change the text
-          text: "Docker image creation ongoing... :eyes:"
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
       - uses: actions/checkout@v3
 
       - name: Login to Docker Hub
@@ -50,15 +38,17 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+      - name: Image Info
+        run: |
+          echo ${{ steps.docker_build.outputs.imageid }} 
+          echo ${{ steps.docker_build.outputs.digest }}
 
-        #Slack Notification after deployment
-      - uses: 8398a7/action-slack@v3
+      - name: Slack Alert
+        uses: 8398a7/action-slack@v3
+        if: always()
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-          text: ":white_check_mark: pushed heyrmi/API-Testing-Framework to docker hub: https://hub.docker.com/repository/docker/heyrmi/apitestingframework"
+          text: "Docker Image: https://hub.docker.com/repository/docker/heyrmi/apitestingframework"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
