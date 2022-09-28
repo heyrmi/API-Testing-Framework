@@ -16,8 +16,13 @@ This is an Rest-API testing framework which is made from
 ## Features:
 
 - Slack integration: Get slack messages on each action (Report Deployment, Docker Deployment) after each test/build
+<img width="1352" alt="Slack Messages" src="https://user-images.githubusercontent.com/42892759/192863727-0f80b6ce-255e-4d48-9dbb-4e1750ccc50f.png">
+
+
+
 - Lastest Exection Report: Support for lastest exection report using Github Pages
 - Docker Image: Support for automatic docker image build and push to docker hub
+
 
 ### Note:
 
