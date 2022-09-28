@@ -19,7 +19,7 @@ jobs:
       - run: echo 'The triggering workflow passed'
       - name: Send custom JSON data to Slack workflow
         id: slack
-        uses: slackapi/slack-github-action@v1.18.0
+        uses: slackapi/slack-github-action@v1.22.0
         with:
           payload: |
             {
@@ -46,7 +46,7 @@ jobs:
       - run: echo 'The triggering workflow failed'
       - name: Send custom JSON data to Slack workflow
         id: slack
-        uses: slackapi/slack-github-action@v1.18.0
+        uses: slackapi/slack-github-action@v1.22.0
         with:
           payload: |
             {
