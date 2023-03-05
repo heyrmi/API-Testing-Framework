@@ -14,20 +14,6 @@ public final class ExtentManager {
     // It gives access to the thread that stated the execution,
     // thus ensures thread safety
 
-    /*
-     * private static ThreadLocal<ExtentTest> threadLocalTest = new ThreadLocal<>();
-     *
-     * // Getter for test
-     * static ExtentTest getTest() {
-     * return threadLocalTest.get();
-     * }
-     *
-     * // Setter for test
-     * static void setTest(ExtentTest test) {
-     * threadLocalTest.set(test);
-     * }
-     */
-
     private static ThreadLocal<ExtentTest> extTest = new ThreadLocal<>();
 
     static ExtentTest getTest() {

@@ -19,7 +19,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface FrameworkAnnotation {
 
-    public String[] author() default "Drip Capital";
+    public String[] author() default "Rahul";
 
     public CategoryType[] category() default CategoryType.STORYTESTING;
 

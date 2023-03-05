@@ -28,7 +28,7 @@ public class PostTests {
     public void postUsers() {
         // TODO: Make method for post multiple users
         // Can't be made since ReqRes.in doesn't support this request
-        // Adding fake assertion to pass this test
+        // Adding fake assertion to fail this test
         Assert.assertTrue(false);
     }
 

@@ -38,6 +38,7 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+
       - name: Image Info
         run: |
           echo ${{ steps.docker_build.outputs.imageid }} 
@@ -49,6 +50,6 @@ jobs:
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-          text: "Docker Image: https://hub.docker.com/repository/docker/heyrmi/apitestingframework"
+          text: "Latest Docker Image: https://hub.docker.com/repository/docker/heyrmi/apitestingframework"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

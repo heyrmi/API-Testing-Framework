@@ -1,5 +1,5 @@
-# Conditional alerts
-name: Alerts
+# Conditional alerts: Will run on successful completion of ["Report", "Docker Image"] workflows
+name: Alert
 
 on:
   workflow_run:
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - run: echo 'The triggering workflow passed'
+      - run: echo 'The triggered workflows passed'
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
-      - run: echo 'The triggering workflow failed'
+      - run: echo 'The triggered workflows failed'
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0

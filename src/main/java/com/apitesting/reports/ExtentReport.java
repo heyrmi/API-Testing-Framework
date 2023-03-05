@@ -16,25 +16,6 @@ public final class ExtentReport {
     // to avoid external instantiation
     private ExtentReport() {
     }
-    /*
-     * private static ExtentReports extent;
-     * private static ExtentTest test;
-     *
-     * public static void initReports() {
-     * extent = new ExtentReports();
-     * ExtentSparkReporter spark = new ExtentSparkReporter("Reports/Report.html");
-     * extent.attachReporter(spark);
-     * }
-     *
-     * public static void tearDownReports() {
-     * extent.flush();
-     * }
-     *
-     * public static void createTest(String name) {
-     * test = extent.createTest(name);
-     * ExtentManager.setTest(test);
-     * }
-     */
 
     private static ExtentReports extent;
 
@@ -54,6 +35,10 @@ public final class ExtentReport {
             extent.flush();
         }
         ExtentManager.unload();
+
+        // TODO: Enable this when running tests in local
+        // It will automatically open latest Extent Report in the browser
+
         // try {
         // Desktop.getDesktop().browse(new
         // File(FrameworkConstants.getExtentReportPath()).toURI());
