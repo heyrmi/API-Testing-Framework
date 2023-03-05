@@ -3,7 +3,7 @@ name: Alert
 
 on:
   workflow_run:
-    workflows: ["Report", "Docker Image"]
+    workflows: ["Tests", "Docker Image"]
     branches: [master]
     types: [completed]
 

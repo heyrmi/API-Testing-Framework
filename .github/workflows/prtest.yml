@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    name: PR Test
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -20,7 +21,10 @@ jobs:
           distribution: "temurin"
           cache: maven
 
-      - name: Build with Maven
+      - name: API Test
         # Have done this because one test set to fail deliberately for report (ideally we should remove this).
         continue-on-error: true
         run: mvn clean test --no-transfer-progress
+
+      - name: Gatling Test
+        run: mvn clean gatling:test --no-transfer-progress

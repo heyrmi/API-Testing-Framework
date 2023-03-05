@@ -1,12 +1,13 @@
 # Will deploy latest execution report, after running tests.
-name: Report
+name: Tests
 
 on:
   push:
     branches: ["master"]
 
 jobs:
-  test:
+  rest-assured-test:
+    name: REST Assured Tests
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -40,3 +41,27 @@ jobs:
           text: "Latest Report Link :arrow_right: https://heyrmi.github.io/API-Testing-Framework/"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  gatling-test:
+    name: Gatling Tests
+    needs: [rest-assured-test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Set up Java 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Maven Test
+        run: mvn clean gatling:test --no-transfer-progress
+
+      - name: Upload Gatling Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: Gatling-Reports
+          path: ./gatling-reports
