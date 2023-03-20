@@ -7,4 +7,4 @@ COPY pom.xml home/apiframework/pom.xml
 COPY testng.xml home/apiframework/testng.xml
 
 WORKDIR home/apiframework/
-ENTRYPOINT mvn -e -X clean test
+ENTRYPOINT mvn clean test --no-transfer-progress
