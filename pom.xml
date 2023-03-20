@@ -86,6 +86,9 @@
                 <groupId>io.gatling</groupId>
                 <artifactId>gatling-maven-plugin</artifactId>
                 <version>4.3.0</version>
+                <configuration>
+                    <runMultipleSimulations>true</runMultipleSimulations>
+                </configuration>
             </plugin>
         </plugins>
     </build>

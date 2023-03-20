@@ -4,6 +4,8 @@ updates:
     directory: /
     open-pull-requests-limit: 2
     rebase-strategy: auto
+    commit-message:
+      prefix: "CI"
     schedule:
       interval: weekly
       day: sunday
@@ -14,6 +16,8 @@ updates:
     directory: /
     open-pull-requests-limit: 2
     rebase-strategy: auto
+    commit-message:
+      prefix: "Maven"
     schedule:
       interval: weekly
       day: sunday
