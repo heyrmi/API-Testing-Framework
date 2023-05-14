@@ -24,8 +24,19 @@ public final class RequestBuilder {
                 .all();
     }
 
+    public static RequestSpecification buildRequestForGetCalls(String url) {
+        return given().baseUri(url)
+                .log()
+                .all();
+    }
+
     public static RequestSpecification buildRequestForPostCalls() {
         return buildRequestForGetCalls()
+                .contentType(ContentType.JSON);
+    }
+
+    public static RequestSpecification buildRequestForPostCalls(String url) {
+        return buildRequestForGetCalls(url)
                 .contentType(ContentType.JSON);
     }
 

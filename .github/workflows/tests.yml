@@ -5,6 +5,9 @@ on:
   push:
     branches: ["master"]
 
+env:
+  ACCESSTOKEN: ${{ secrets.ACCESSTOKEN }}
+
 jobs:
   rest-assured-test:
     name: REST Assured Tests

@@ -23,6 +23,14 @@
                     <include name="postRequestUsingExternalFileUsingSingleton" />
                 </methods>
             </class>
+            <class name="com.apitesting.tests.AuthApiTest">
+                <methods>
+                    <include name="testNumberOfGithubRepoOfUser" />
+                    <include name="testCreateGithubRepoAPI" />
+                    <include name="testGithubUserBlock" />
+                    <include name="testGithubUserUnblock" />
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
