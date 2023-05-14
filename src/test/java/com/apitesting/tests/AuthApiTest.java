@@ -9,6 +9,7 @@ import com.apitesting.requestbuilder.RequestBuilder;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,11 +22,11 @@ import java.util.Map;
 public class AuthApiTest {
 
         // To replace blocking user dynamically
-        private static String blockUserName = "topfunky";
+        private static String blockUserName = "errfree";
         private static String blockUserBasePath = String.format("/user/blocks/%s", blockUserName);
 
         // Repository name
-        private static String repoName = "api-test-repo";
+        private static String repoName = "hiworld";
 
         // Bearer Token (getting it from GithubActions)
         private static String personalAccessToken = System.getenv("ACCESSTOKEN");
@@ -37,13 +38,18 @@ public class AuthApiTest {
         @Test(enabled = true)
         @TestDetails(author = { "Rahul Mishra" }, category = CategoryType.REGRESSION)
         public void testNumberOfGithubRepoOfUser() {
-                Response response = RequestBuilder.buildRequestForGetCalls(FrameworkConstants.getGITHUB_BASE_URI())
-                                .header("X-GitHub-Api-Version", "2022-11-28")
-                                .get("/users/heyrmi/repos");
+
+                RequestSpecification requestSpecification = RequestBuilder
+                                .buildRequestForGetCalls(FrameworkConstants.getGITHUB_BASE_URI())
+                                .header("X-GitHub-Api-Version", "2022-11-28");
+
+                Response response = requestSpecification.get("/users/heyrmi/repos");
 
                 response.prettyPrint();
 
+                ExtentLogger.logRequest(requestSpecification);
                 ExtentLogger.logResponse(response.asPrettyString());
+                ExtentLogger.info("Response status code: " + response.statusCode());
 
                 String stringReponse = response.asPrettyString();
                 JsonPath jsonPath = new JsonPath(stringReponse);
@@ -75,18 +81,20 @@ public class AuthApiTest {
                 requestBody.put("private", false);
                 requestBody.put("is_template", false);
 
-                Response response = RequestBuilder
+                RequestSpecification requestSpecification = RequestBuilder
                                 .buildRequestForPostCalls(FrameworkConstants.getGITHUB_BASE_URI())
                                 .header("Accept", "application/vnd.github+json")
                                 .header("X-GitHub-Api-Version", "2022-11-28")
-                                .header("Authorization",
-                                                bearerToken)
-                                .body(requestBody)
-                                .post("/user/repos");
+                                .header("Authorization", bearerToken)
+                                .body(requestBody);
+
+                Response response = requestSpecification.post("/user/repos");
 
                 // Log Response
                 response.prettyPrint();
+                ExtentLogger.logRequest(requestSpecification);
                 ExtentLogger.logResponse(response.asPrettyString());
+                ExtentLogger.info("Response status code: " + response.statusCode());
 
                 // Pass Response to JsonPath
                 String stringReponse = response.asPrettyString();
@@ -114,16 +122,19 @@ public class AuthApiTest {
         @Test(enabled = true)
         @TestDetails(author = { "Rahul Mishra" }, category = CategoryType.REGRESSION)
         public void testGithubUserBlock() {
-                Response response = RequestBuilder
+                RequestSpecification requestSpecification = RequestBuilder
                                 .buildRequestForPostCalls(FrameworkConstants.getGITHUB_BASE_URI())
                                 .header("Accept", "application/vnd.github+json")
                                 .header("X-GitHub-Api-Version", "2022-11-28")
-                                .header("Authorization", bearerToken)
-                                .put(blockUserBasePath);
+                                .header("Authorization", bearerToken);
 
+                Response response = requestSpecification.put(blockUserBasePath);
+
+                // Log Response
                 response.prettyPrint();
-
+                ExtentLogger.logRequest(requestSpecification);
                 ExtentLogger.logResponse(response.asPrettyString());
+                ExtentLogger.info("Response status code: " + response.statusCode());
 
                 // Asserting with both (restAssured and assertJ)
                 response.then().statusCode(204);
@@ -138,16 +149,19 @@ public class AuthApiTest {
         @Test(dependsOnMethods = { "testGithubUserBlock" }, enabled = true)
         @TestDetails(author = { "Rahul Mishra" }, category = CategoryType.REGRESSION)
         public void testGithubUserUnblock() {
-                Response response = RequestBuilder
+                RequestSpecification requestSpecification = RequestBuilder
                                 .buildRequestForPostCalls(FrameworkConstants.getGITHUB_BASE_URI())
                                 .header("Accept", "application/vnd.github+json")
                                 .header("X-GitHub-Api-Version", "2022-11-28")
-                                .header("Authorization", bearerToken)
-                                .delete(blockUserBasePath);
+                                .header("Authorization", bearerToken);
 
+                Response response = requestSpecification.delete(blockUserBasePath);
+
+                // Log Response
                 response.prettyPrint();
-
+                ExtentLogger.logRequest(requestSpecification);
                 ExtentLogger.logResponse(response.asPrettyString());
+                ExtentLogger.info("Response status code: " + response.statusCode());
 
                 // Asserting with restAssured and assertJ
                 response.then().statusCode(204);
