@@ -26,7 +26,6 @@ public final class ExtentLogger {
         ExtentManager.getTest().fail(message);
     }
 
-
     public static void info(String message) {
         ExtentManager.getTest().info(message);
     }
@@ -38,7 +37,6 @@ public final class ExtentLogger {
     public static void skip(String message) {
         ExtentManager.getTest().skip(message);
     }
-
 
     public static void logResponse(String message) {
         info("Response Details: ");
@@ -56,6 +54,9 @@ public final class ExtentLogger {
         if (Objects.nonNull(query.getHeaders())) {
             info("Headers: ");
             for (var header : query.getHeaders()) {
+                if (header.getName() == "Authorization") {
+                    continue;
+                }
                 info(header.getName() + ": " + header.getValue());
             }
         }

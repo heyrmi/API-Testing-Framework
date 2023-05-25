@@ -1,6 +1,6 @@
 package com.apitesting.tests;
 
-import com.apitesting.annotation.FrameworkAnnotation;
+import com.apitesting.annotation.TestDetails;
 import com.apitesting.enums.CategoryType;
 import com.apitesting.reports.ExtentLogger;
 import com.apitesting.requestbuilder.RequestBuilder;
@@ -14,7 +14,7 @@ public class GetTests {
 
 
     @Test
-    @FrameworkAnnotation(author = {"Lex"}, category = {CategoryType.SMOKE})
+    @TestDetails(author = {"Lex"}, category = {CategoryType.SMOKE})
     public void getUsersDetails() {
         Response response = RequestBuilder.buildRequestForGetCalls()
                 .get("/api/users?page=2");
@@ -34,7 +34,7 @@ public class GetTests {
     }
 
     @Test
-    @FrameworkAnnotation(author = {"Joe"}, category = {CategoryType.SMOKE})
+    @TestDetails(author = {"Joe"}, category = {CategoryType.SMOKE})
     public void getUserDetails() {
         Response response = RequestBuilder.buildRequestForGetCalls()
                 .pathParams("id", 2)

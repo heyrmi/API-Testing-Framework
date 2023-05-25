@@ -1,6 +1,6 @@
 package com.apitesting.listeners;
 
-import com.apitesting.annotation.FrameworkAnnotation;
+import com.apitesting.annotation.TestDetails;
 import com.apitesting.enums.ConfigProperties;
 import com.apitesting.reports.ExtentLogger;
 import com.apitesting.reports.ExtentReport;
@@ -27,9 +27,10 @@ public class TestListener implements ITestListener, ISuiteListener {
     public void onTestStart(ITestResult result) {
         ExtentReport.createTest(result.getName());
         ExtentReport.addAuthors(result.getMethod().getConstructorOrMethod().getMethod()
-                .getAnnotation(FrameworkAnnotation.class).author());
+                .getAnnotation(TestDetails.class).author());
         ExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod()
-                .getAnnotation(FrameworkAnnotation.class).category());
+                .getAnnotation(TestDetails.class).category());
+
     }
 
     @Override

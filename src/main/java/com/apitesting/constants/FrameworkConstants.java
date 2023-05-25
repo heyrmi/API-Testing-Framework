@@ -18,5 +18,6 @@ public final class FrameworkConstants {
                         + "/src/test/resources/config.properties";
         private static @Getter final String extentReportPath = System.getProperty("user.dir")
                         + "/Reports/index.html";
+        private static @Getter final String GITHUB_BASE_URI = "https://api.github.com";
 
 }
